@@ -16,6 +16,8 @@ $this->title = 'Crud Application';
         <?php 
         $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data']]) ?>
         
+    
+
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
@@ -31,10 +33,31 @@ $this->title = 'Crud Application';
         </div>
     </div>
 
+    
+
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($emp_salary, 'month'); ?>
+               <?= $form->field($emp_salary,'month')->dropDownList(
+                
+                [
+                    'Select Month'=>'Select Month',
+                    'Jan' => 'Jan',
+                    'Feb' => 'Feb',
+                    'March' => 'March',
+                    'April' => 'April',
+                    'May' => 'May',
+                    'June' => 'June',
+                    'July' => 'July',
+                    'Aug' => 'Aug',
+                    'Sep' => 'Sep',
+                    'Oct' => 'Aug',
+                    'Nov' => 'Nov',
+                    'Dec' => 'Dec',
+                ]
+                );
+                ?>
+                
             </div>
         </div>
     </div>
@@ -42,14 +65,14 @@ $this->title = 'Crud Application';
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($emp_salary, 'year'); ?>
+                <?= $form->field($emp_salary, 'year')->input('number'); ?>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($emp_salary, 'salary_credited'); ?>
+                <?= $form->field($emp_salary, 'salary_credited')->input('number'); ?>
             </div>
         </div>
     </div>

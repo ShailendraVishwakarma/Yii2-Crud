@@ -1,4 +1,3 @@
-
 <?php
 
 /** @var yii\web\View $this */
@@ -35,7 +34,26 @@ $this->title = 'Crud Application';
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($emp_salary, 'month'); ?>
+               <?= $form->field($emp_salary,'month')->dropDownList(
+                
+                [
+                    'Select Month'=>'Select Month',
+                    'Jan' => 'Jan',
+                    'Feb' => 'Feb',
+                    'March' => 'March',
+                    'April' => 'April',
+                    'May' => 'May',
+                    'June' => 'June',
+                    'July' => 'July',
+                    'Aug' => 'Aug',
+                    'Sep' => 'Sep',
+                    'Oct' => 'Aug',
+                    'Nov' => 'Nov',
+                    'Dec' => 'Dec',
+                ]
+                );
+                ?>
+                
             </div>
         </div>
     </div>
@@ -43,14 +61,14 @@ $this->title = 'Crud Application';
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($emp_salary, 'year'); ?>
+                <?= $form->field($emp_salary, 'year')->input('number'); ?>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($emp_salary, 'salary_credited'); ?>
+                <?= $form->field($emp_salary, 'salary_credited')->input('number'); ?>
             </div>
         </div>
     </div>
@@ -68,9 +86,9 @@ $this->title = 'Crud Application';
             <div class="col-lg-3">
             <?= Html::submitButton('Create ',['class'=>'btn btn-primary']);?>
             </div>
-            <div class="col-lg-2">
-                <a href=<?php echo yii::$app->homeUrl;?>class=" btn btn-primary">Go Back</a>
-            </div>
+            <div class="mt-3 btn btn-primary text-bg-light">
+            <a href="http://localhost/employee_yii2_crud/web/index.php?r=admin%2Findex">back</a>
+         </div>
             </div>
         </div>
     </div>

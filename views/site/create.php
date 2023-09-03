@@ -16,7 +16,7 @@ $this->title = 'Crud Application';
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'fullname'); ?>
+                <?= $form->field($employee, 'fullname')->input('text'); ?>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@ $this->title = 'Crud Application';
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'mobile_no'); ?>
+                <?= $form->field($employee, 'mobile_no')->input('number'); ?>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@ $this->title = 'Crud Application';
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'email'); ?>
+                <?= $form->field($employee, 'email')->input('email'); ?>
             </div>
         </div>
     </div>
@@ -46,35 +46,35 @@ $this->title = 'Crud Application';
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'pincode'); ?>
+                <?= $form->field($employee, 'pincode')->input('number'); ?>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'date_of_joining'); ?>
+                <?= $form->field($employee, 'date_of_joining')->input('date'); ?>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'date_of_leaving'); ?>
+                <?= $form->field($employee, 'date_of_leaving')->input('date'); ?>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'monthly_salary'); ?>
+                <?= $form->field($employee, 'monthly_salary')->input('number'); ?>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="form-group">
             <div class="col-lg-6">
-                <?= $form->field($employee, 'yearly_salary'); ?>
+                <?= $form->field($employee, 'yearly_salary')->input('number'); ?>
             </div>
         </div>
     </div>
@@ -92,7 +92,10 @@ $this->title = 'Crud Application';
             <?= Html::submitButton('Create ',['class'=>'btn btn-primary']);?>
             </div>
             <div class="col-lg-2">
-                <a href=<?php echo yii::$app->homeUrl;?>class=" btn btn-primary">Go Back</a>
+            <div class="body-content">
+        <div class="mt-3 btn btn-primary text-bg-light">
+            <a href="index">back</a>
+         </div>
             </div>
             </div>
         </div>

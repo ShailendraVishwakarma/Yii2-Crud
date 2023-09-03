@@ -11,13 +11,15 @@ $this->title = 'Crud Application';
     
     <div class="body-content">
         <div class="mb-3 btn btn-primary text-bg-light">
-    <a href="index">back</a>
+    <a href="http://localhost/employee_yii2_crud/web/index.php?r=admin%2Findex">back</a>
     </div>
 
     <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <?php echo $emp_salary->employee_id; ?>
   </li>
+  
+  
   <li class="list-group-item d-flex justify-content-between align-items-center">
   <?php echo $emp_salary->month; ?>
   </li>

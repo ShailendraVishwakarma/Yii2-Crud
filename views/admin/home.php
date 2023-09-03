@@ -1,6 +1,7 @@
 
 <?php
 /** @var yii\web\View $this */
+use yii\db\Query;
 use yii\helpers\Html;
 $this->title = 'Crud Application';
 ?>
@@ -20,11 +21,14 @@ $this->title = 'Crud Application';
     </div>
     <div class="body-content">
         <div class="row">
+        
         <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Emp ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Mobile No</th>
       <th scope="col">Month</th>
       <th scope="col">Year</th>
       <th scope="col">Salary</th>
@@ -34,11 +38,18 @@ $this->title = 'Crud Application';
     </tr>
   </thead>
   <tbody>
+  
     <?php if(count($emp_salarys) > 0): ?>
+      
     <?php foreach($emp_salarys as $emp_salary): ?>
+      
     <tr class="table-active">
       <th scope="row"><?php echo $emp_salary->id; ?></th>
       <td><?php echo $emp_salary->employee_id; ?></td>
+      <td><?php echo $emp_salary->name; ?></td>
+      <td><?php echo $emp_salary->mobile_no; ?></td>
+
+      
       <td><?php echo $emp_salary->month; ?></td>
       <td><?php echo $emp_salary->year; ?></td>
       <td><?php echo $emp_salary->salary_credited; ?></td>
@@ -59,11 +70,11 @@ $this->title = 'Crud Application';
   </tbody>
 </table>
            
-           
         </div>
 
     </div>
 </div>
 <script>
     // let actionbtn=""
+    
 </script>
