@@ -16,12 +16,16 @@ class Emp_salarys extends ActiveRecord
     public function rules()
     {
         return[
-            [['employee_id', 'month', 'year', 'salary_credited', 'paid_for_days'], 'required']
+            [['employee_id', 'month','employee_id', 'year', 'salary_credited', 'paid_for_days'], 'required']
         ];
     }
 
     // public function getEmp_salarys(){
     //     return $this->hasOne(Employees::className(),['id'=>'fullname']);
     // }
+    public function getEmployees()
+{
+    return $this->hasOne(Employees::class, ['id' => 'employee_id']);
+}
 }
 ?>

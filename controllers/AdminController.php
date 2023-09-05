@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controllers;
-
+use yii\data\ActiveDataProvider;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -62,24 +62,35 @@ class AdminController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {
-        // return $this->render('index');
+    // public function actionIndex()
+    // {
+    //     // return $this->render('index');
         
-        // get data all from database...................
-        $emp_salarys = Emp_salarys::find()
+    //     // get data all from database...................
+    //     $emp_salarys = Emp_salarys::find()
 
-        ->select(['emp_salarys.*', 'employees.mobile_no AS mobile_no','employees.fullname AS name']) // Replace with the actual columns you want to select
-        ->from(['emp_salarys' => 'emp_salarys'])
-        ->innerJoin('employees employees', 'emp_salarys.employee_id = employees.id');
-        // ->where(['emp_salarys.mobile_no' => '12345']); // Optional: Add conditions
+    //     ->select(['emp_salarys.*', 'employees.mobile_no AS mobile_no','employees.fullname AS name']) // Replace with the actual columns you want to select
+    //     ->from(['emp_salarys' => 'emp_salarys'])
+    //     ->innerJoin('employees employees', 'emp_salarys.employee_id = employees.id');
+    //     // ->where(['emp_salarys.mobile_no' => '12345']); // Optional: Add conditions
     
-    // Execute the query and fetch the results
-    $rows = $emp_salarys->all();
+    //     // Execute the query and fetch the results
+    //     $rows = $emp_salarys->all();
 
         
-        return $this->render('home',['emp_salarys' => $rows]);
-    }
+    //     return $this->render('home',['emp_salarys' => $rows]);
+    // }
+
+    public function actionIndex()
+{
+    $dataProvider = new ActiveDataProvider([
+        'query' => Emp_salarys::find()->joinWith('employees'),
+    ]);
+
+    return $this->render('home', [
+        'dataProvider' => $dataProvider,
+    ]);
+}
 
 
     // send data in database.....................

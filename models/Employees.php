@@ -18,8 +18,11 @@ class Employees extends ActiveRecord
     public function rules()
     {
         return[
-            [['fullname', 'mobile_no', 'email', 'address', 'pincode', 'date_of_joining', 'date_of_leaving', 'monthly_salary', 'yearly_salary','profile_photo'], 'required']
+            [['fullname' , 'address', 'pincode', 'date_of_joining', 'date_of_leaving', 'monthly_salary', 'yearly_salary','profile_photo'], 'required'],
+            ['mobile_no', 'string', 'max' => 10],
+            ['email', 'email'],
         ];
+        
     }
 }
 ?>
